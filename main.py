@@ -7,34 +7,6 @@
 # 6- user onlu have 5 chances to select a number
 # 7- If the user is correct , the user wins and the game ends
 
-# import random
-
-# print("--------Welcome to the Number Guessing Game! \n You have 5 attempts to guess the number between 1 to 50--------")
-# number_to_guess = random.randrange(1, 50)            # generate a random range (number) betwwen 1 to 50
-                                            
-# chances = 5
-
-# guess_counter = 0                  # initialize the guess counter
-
-# while guess_counter < chances:                     # loop until the guess counter is less than the chances 
-#     guess_counter += 1                            # increement the guess counter
-#     my_guess = int(input("Enter your guess: "))
-
-#     if my_guess == number_to_guess:
-#         print(f"The number is {number_to_guess} and you found it right in {guess_counter} attempts")
-#         break
-
-#     elif guess_counter >= chances and my_guess != number_to_guess:
-#         print(f"Oops Sorry! the number is {number_to_guess} better luck next time")
-
-#     elif my_guess < number_to_guess:
-#         print("Your guess is too low, try again!")
-
-#     elif my_guess > number_to_guess:
-#         print("Your guess is too high, try again!")
-
-
-
 
 
 import streamlit as st
@@ -81,8 +53,9 @@ if st.button('Submit Guess'):
 # Button to reset the game
 if st.button('Reset Game'):
     reset_game()
-    st.experimental_rerun()
 
 # Display the number of attempts left
 if not st.session_state['game_over']:
     st.write(f"Attempts left: {5 - st.session_state['guess_counter']}")
+
+
